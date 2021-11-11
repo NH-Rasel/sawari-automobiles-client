@@ -48,14 +48,14 @@ const Navigation = () => {
                         >
                             <MenuIcon />
                         </IconButton>
-                        <Link style={{ textDecoration: 'none', color: 'white' }} to="/home"><img sx={{ width: '150px' }} src="https://i.ibb.co/SmmzC8m/logo.png" alt="" /></Link>
+                        <Link style={{ textDecoration: 'none', color: 'white' }} to="/home"><img src="https://i.ibb.co/SmmzC8m/logo.png" alt="" /></Link>
                         <Box sx={{ display: 'flex', alignItems: 'center' }} className={navItemContainer}>
-                            <Link style={{ textDecoration: 'none', color: 'white' }} to="/home"><Button color="inherit">Home</Button></Link>
+                            <Link style={{ textDecoration: 'none', color: 'white' }} to="/home"><Button style={{ fontWeight: 700 }} color="inherit">Home</Button></Link>
                             <Box>
-                                <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/dashboard"><Button color="inherit">Dashboard</Button></NavLink>
-                                <Button color="inherit">Logout</Button>
+                                <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/dashboard"><Button style={{ fontWeight: 700 }} color="inherit">Dashboard</Button></NavLink>
+                                <Button style={{ fontWeight: 700 }} color="inherit">Logout</Button>
                             </Box>
-                            <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/login"><Button color="inherit">Login</Button></NavLink>
+                            <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/login"><Button style={{ fontWeight: 700 }} color="inherit">Login</Button></NavLink>
                         </Box>
                     </Toolbar>
                 </AppBar>
