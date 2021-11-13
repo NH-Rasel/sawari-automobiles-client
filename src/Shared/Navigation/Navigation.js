@@ -12,8 +12,10 @@ import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
+import useAuth from '../../hooks/useAuth';
 
 const Navigation = () => {
+    const { user, logOut } = useAuth();
     const theme = useTheme();
     const useStyle = makeStyles({
         navItem: {
@@ -51,11 +53,15 @@ const Navigation = () => {
                         <Link style={{ textDecoration: 'none', color: 'white' }} to="/home"><img src="https://i.ibb.co/SmmzC8m/logo.png" alt="" /></Link>
                         <Box sx={{ display: 'flex', alignItems: 'center' }} className={navItemContainer}>
                             <Link style={{ textDecoration: 'none', color: 'white' }} to="/home"><Button style={{ fontWeight: 700 }} color="inherit">Home</Button></Link>
-                            <Box>
-                                <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/dashboard"><Button style={{ fontWeight: 700 }} color="inherit">Dashboard</Button></NavLink>
-                                <Button style={{ fontWeight: 700 }} color="inherit">Logout</Button>
-                            </Box>
-                            <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/login"><Button style={{ fontWeight: 700 }} color="inherit">Login</Button></NavLink>
+                            {
+                                user?.email ?
+                                    <Box>
+                                        <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/dashboard"><Button color="inherit">Dashboard</Button></NavLink>
+                                        <Button onClick={logOut} color="inherit">Logout</Button>
+                                    </Box>
+                                    :
+                                    <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/login"><Button color="inherit">Login</Button></NavLink>
+                            }
                         </Box>
                     </Toolbar>
                 </AppBar>
@@ -77,11 +83,17 @@ const Navigation = () => {
                                 <ListItem button>
                                     <ListItemText><Link style={{ textDecoration: 'none' }} to="/explore"><Button color="inherit">Explore</Button></Link></ListItemText>
                                 </ListItem>
+
                                 <ListItem button>
-                                    <ListItemText><Link style={{ textDecoration: 'none' }} to="/dashboard"><Button color="inherit">Dashboard</Button></Link></ListItemText>
-                                </ListItem>
-                                <ListItem button>
-                                    <ListItemText><Link style={{ textDecoration: 'none' }} to="/login"><Button color="inherit">Login</Button></Link></ListItemText>
+                                    {
+                                        user?.email ?
+                                            <ListItem button>
+                                                <ListItemText><Link style={{ textDecoration: 'none' }} to="/dashboard"><Button color="inherit">Dashboard</Button></Link></ListItemText>
+                                                <Button onClick={logOut} color="inherit">Logout</Button>
+                                            </ListItem>
+                                            :
+                                            <ListItemText><Link style={{ textDecoration: 'none' }} to="/login"><Button color="inherit">Login</Button></Link></ListItemText>
+                                    }
                                 </ListItem>
                             </List>
                         </Box>
