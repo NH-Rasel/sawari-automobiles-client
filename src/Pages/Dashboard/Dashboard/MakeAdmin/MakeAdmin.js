@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Review = () => {
+const MakeAdmin = () => {
     return (
         <div>
-            <h3>this is review</h3>
+
         </div>
     );
 };
 
-export default Review;
+export default MakeAdmin;

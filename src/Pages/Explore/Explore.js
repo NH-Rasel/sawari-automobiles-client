@@ -1,10 +1,9 @@
 import { Container, Grid, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React, { useEffect, useState } from 'react';
-import Car from './Car/Car';
+import Car from '../Home/Cars/Car/Car';
 
-
-const Cars = () => {
+const Explore = () => {
     const [cars, setCars] = useState([]);
     useEffect(() => {
         fetch('http://localhost:5000/cars')
@@ -15,8 +14,8 @@ const Cars = () => {
     return (
         <Box sx={{ flexGrow: 1 }}>
             <Container>
-                <Typography sx={{ fontWeight: 500, m: 4 }} variant="h4" gutter component="div">
-                    Car Collection
+                <Typography sx={{ fontWeight: 500, m: 4 }} variant="h4" component="div">
+                    Explore Cars
                 </Typography>
                 <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }} item xs={12} sm={6} md={4}>
                     {
@@ -30,4 +29,4 @@ const Cars = () => {
     );
 };
 
-export default Cars;
+export default Explore;
