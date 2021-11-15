@@ -6,6 +6,7 @@ import {
 import './App.css';
 import AuthProvider from "./contexts/AuthProvider/AuthProvider";
 import AdminPanel from "./Pages/AdminPanel/AdminPanel";
+import UpdateOrders from "./Pages/AdminPanel/ManageOrders/UpdateOrders/UpdateOrders";
 import ArticleDetails from "./Pages/ArticleDetails/ArticleDetails";
 import CarDetails from "./Pages/CarDetails/CarDetails";
 import Dashboard from "./Pages/Dashboard/Dashboard/Dashboard";
@@ -42,6 +43,9 @@ function App() {
             </PrivateRoute>
             <PrivateRoute path="/articleDetails/:articleId">
               <ArticleDetails />
+            </PrivateRoute>
+            <PrivateRoute path="/updateOrders/:id">
+              <UpdateOrders />
             </PrivateRoute>
             <PrivateRoute path="/adminPanel">
               <AdminPanel />

@@ -46,8 +46,7 @@ const Order = ({ openOrder, handleOrderClose, carDetails }) => {
             .then(data => {
                 if (data.insertedId) {
                     <Alert severity="success">
-                        <AlertTitle>Success</AlertTitle>
-                        Car Ordered successfully
+                        <AlertTitle>Car Ordered successfully</AlertTitle>
                     </Alert>
                     handleOrderClose();
                 }
