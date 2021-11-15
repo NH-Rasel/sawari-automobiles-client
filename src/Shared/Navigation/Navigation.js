@@ -15,7 +15,7 @@ import ListItemText from '@mui/material/ListItemText';
 import useAuth from '../../hooks/useAuth';
 
 const Navigation = () => {
-    const { user, logOut } = useAuth();
+    const { user, logOut, admin } = useAuth();
     const theme = useTheme();
     const useStyle = makeStyles({
         navItem: {
@@ -58,11 +58,16 @@ const Navigation = () => {
                                 user?.email ?
                                     <Box>
                                         <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/dashboard"><Button color="inherit">Dashboard</Button></NavLink>
+                                        {
+                                            admin &&
+                                            <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/adminPanel"><Button color="inherit">Admin Panel</Button></NavLink>
+                                        }
                                         <Button onClick={logOut} style={{ fontWeight: 700 }} color="inherit">Logout</Button>
                                     </Box>
                                     :
                                     <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/login"><Button style={{ fontWeight: 700 }} color="inherit">Login</Button></NavLink>
                             }
+
                         </Box>
                     </Toolbar>
                 </AppBar>
@@ -90,7 +95,12 @@ const Navigation = () => {
                                         user?.email ?
                                             <ListItem button>
                                                 <ListItemText><Link style={{ textDecoration: 'none' }} to="/dashboard"><Button color="inherit">Dashboard</Button></Link></ListItemText>
-                                                <Button onClick={logOut} color="inherit">Logout</Button>
+                                                {
+                                                    admin && <ListItemText><Link style={{ textDecoration: 'none' }} to="/adminPanel"><Button color="inherit">Admin Panel</Button></Link></ListItemText>
+                                                }
+                                                <ListItemText style={{ textDecoration: 'none' }}>
+                                                    <Button onClick={logOut} color="inherit">Logout</Button>
+                                                </ListItemText>
                                             </ListItem>
                                             :
                                             <ListItemText><Link style={{ textDecoration: 'none' }} to="/login"><Button color="inherit">Login</Button></Link></ListItemText>

@@ -15,19 +15,20 @@ import {
     Link,
     useRouteMatch
 } from "react-router-dom";
-import MyOrders from '../MyOrders/MyOrders';
-import Payment from '../Payment/Payment';
-import Review from '../Review/Review';
-import useAuth from '../../../hooks/useAuth';
+import useAuth from '../../hooks/useAuth';
+import AdminRoute from '../Login/AdminRoute/AdminRoute';
+import ManageOrders from '../AdminPanel/ManageOrders/ManageOrders';
+import AddCar from '../AdminPanel/AddCar/AddCar';
+import ManageCars from '../AdminPanel/ManageCars/MangeCars';
+import MakeAdmin from '../AdminPanel/MakeAdmin/MakeAdmin';
 
-const drawerWidth = 180;
+const drawerWidth = 200;
 
-function Dashboard(props) {
-    const { logOut } = useAuth();
+function AdminPanel(props) {
+    const { logOut, admin } = useAuth();
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
     let { path, url } = useRouteMatch();
-
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
     };
@@ -36,11 +37,21 @@ function Dashboard(props) {
         <div>
             <Toolbar><Link style={{ textDecoration: 'none' }} to="/home"><Button color="inherit">Home</Button></Link></Toolbar>
             <Divider />
-            <List>
-                <ListItem><Link style={{ textDecoration: 'none' }} to={`${url}/myOrders`}><Button color="inherit">My Orders</Button></Link></ListItem>
-                <ListItem><Link style={{ textDecoration: 'none' }} to={`${url}/payment`}><Button color="inherit">Payment</Button></Link></ListItem>
-                <ListItem><Link style={{ textDecoration: 'none' }} to={`${url}/review`}><Button color="inherit">Review</Button></Link></ListItem>
-            </List>
+            <ListItem>
+                <Link style={{ textDecoration: 'none' }} to={`${url}/makeAdmin`}><Button color="inherit">Make Admin</Button></Link>
+            </ListItem>
+            {admin && <Box>
+                <List>
+                    <ListItem><Link style={{ textDecoration: 'none' }} to={`${url}/manageOrders`}><Button color="inherit">Manage Orders</Button></Link></ListItem>
+                    <ListItem>
+                        <Link style={{ textDecoration: 'none' }} to={`${url}/addCar`}><Button color="inherit">Add Car</Button></Link>
+                    </ListItem>
+                    <ListItem>
+                        <Link style={{ textDecoration: 'none' }} to={`${url}/manageCar`}><Button color="inherit">Manage Car</Button></Link>
+                    </ListItem>
+
+                </List>
+            </Box>}
             <Divider />
             <br />
             <ListItem>
@@ -71,7 +82,7 @@ function Dashboard(props) {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" noWrap component="div">
-                        Dashboard
+                        AdminPanel
                     </Typography>
                 </Toolbar>
             </AppBar>
@@ -112,14 +123,17 @@ function Dashboard(props) {
             >
                 <Toolbar />
                 <Switch>
-                    <Route path={`${path}/myOrders`}>
-                        <MyOrders />
-                    </Route>
-                    <Route path={`${path}/payment`}>
-                        <Payment />
-                    </Route>
-                    <Route path={`${path}/review`}>
-                        <Review />
+                    <AdminRoute path={`${path}/manageOrders`}>
+                        <ManageOrders />
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/addCar`}>
+                        <AddCar />
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/manageCars`}>
+                        <ManageCars />
+                    </AdminRoute>
+                    <Route path={`${path}/makeAdmin`}>
+                        <MakeAdmin />
                     </Route>
                 </Switch>
             </Box>
@@ -128,4 +142,4 @@ function Dashboard(props) {
 };
 
 
-export default Dashboard;
+export default AdminPanel;
