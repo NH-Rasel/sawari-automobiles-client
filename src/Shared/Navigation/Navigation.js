@@ -93,15 +93,17 @@ const Navigation = () => {
                                 <ListItem button>
                                     {
                                         user?.email ?
-                                            <ListItem button>
+                                            <List>
                                                 <ListItemText><Link style={{ textDecoration: 'none' }} to="/dashboard"><Button color="inherit">Dashboard</Button></Link></ListItemText>
-                                                {
-                                                    admin && <ListItemText><Link style={{ textDecoration: 'none' }} to="/adminPanel"><Button color="inherit">Admin Panel</Button></Link></ListItemText>
-                                                }
-                                                <ListItemText style={{ textDecoration: 'none' }}>
+                                                <ListItemText>
+                                                    {
+                                                        admin && <Link style={{ textDecoration: 'none' }} to="/adminPanel"><Button color="inherit">Admin Panel</Button></Link>
+                                                    }
+                                                </ListItemText>
+                                                <ListItemText button style={{ textDecoration: 'none' }}>
                                                     <Button onClick={logOut} color="inherit">Logout</Button>
                                                 </ListItemText>
-                                            </ListItem>
+                                            </List>
                                             :
                                             <ListItemText><Link style={{ textDecoration: 'none' }} to="/login"><Button color="inherit">Login</Button></Link></ListItemText>
                                     }

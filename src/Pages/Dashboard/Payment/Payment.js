@@ -1,9 +1,10 @@
+import { Typography } from '@mui/material';
 import React from 'react';
 
 const Payment = () => {
     return (
         <div>
-            <h3>Payment is coming soon</h3>
+            <Typography variant='h3'>Payment system is coming soon</Typography>
         </div>
     );
 };
