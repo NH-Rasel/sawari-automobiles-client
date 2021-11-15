@@ -7,7 +7,7 @@ import { Paper } from '@mui/material';
 import { Box } from '@mui/system';
 
 const Article = (props) => {
-    const { img, title, description } = props.article;
+    const { _id, img, title, description } = props.article;
 
     return (
         <>
@@ -25,7 +25,7 @@ const Article = (props) => {
                     <Typography variant="body2" color="text.secondary">
                         {description.slice(0, 200)}
                     </Typography>
-                    <Link to="/carDetails"><Button>Read More</Button></Link>
+                    <Link to={`/articleDetails/${_id}`}><Button>Read More</Button></Link>
                 </Box>
             </Paper>
         </>

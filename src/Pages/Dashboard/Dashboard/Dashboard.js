@@ -34,7 +34,7 @@ function Dashboard(props) {
 
     const drawer = (
         <div>
-            <Toolbar><Link style={{ textDecoration: 'none' }} to="/home"><Button color="inherit">Home</Button></Link></Toolbar>
+            <Toolbar><Link style={{ textDecoration: 'none' }} to="/home"><Button color="inherit"> Go Home</Button></Link></Toolbar>
             <Divider />
             <List>
                 <ListItem><Link style={{ textDecoration: 'none' }} to={`${url}/myOrders`}><Button color="inherit">My Orders</Button></Link></ListItem>

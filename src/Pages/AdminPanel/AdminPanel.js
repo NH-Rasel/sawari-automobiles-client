@@ -35,7 +35,7 @@ function AdminPanel(props) {
 
     const drawer = (
         <div>
-            <Toolbar><Link style={{ textDecoration: 'none' }} to="/home"><Button color="inherit">Home</Button></Link></Toolbar>
+            <Toolbar><Link style={{ textDecoration: 'none' }} to="/home"><Button color="inherit"> Go Home</Button></Link></Toolbar>
             <Divider />
             <ListItem>
                 <Link style={{ textDecoration: 'none' }} to={`${url}/makeAdmin`}><Button color="inherit">Make Admin</Button></Link>

@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { Paper } from '@mui/material';
 
 const Car = (props) => {
-    const { img, title, brand, price, rating } = props.car;
+    const { _id, img, title, brand, price, rating } = props.car;
     return (
         <>
             <Paper elevation={3} sx={{ m: 3 }}>
@@ -28,7 +28,7 @@ const Car = (props) => {
                 <Typography variant="body2" color="text.secondary">
                     Ratings: {rating}
                 </Typography>
-                <Link to="/carDetails"><Button>See Details</Button></Link>
+                <Link to={`/carDetails/${_id}`}><Button>See Details</Button></Link>
             </Paper>
         </>
     );
