@@ -47,7 +47,7 @@ function AdminPanel(props) {
                         <Link style={{ textDecoration: 'none' }} to={`${url}/addCar`}><Button color="inherit">Add Car</Button></Link>
                     </ListItem>
                     <ListItem>
-                        <Link style={{ textDecoration: 'none' }} to={`${url}/manageCar`}><Button color="inherit">Manage Car</Button></Link>
+                        <Link style={{ textDecoration: 'none' }} to={`${url}/manageCars`}><Button color="inherit">Manage Cars</Button></Link>
                     </ListItem>
 
                 </List>
