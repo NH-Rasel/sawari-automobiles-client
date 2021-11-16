@@ -16,7 +16,7 @@ const CarDetails = () => {
     const handleOrderClose = () => setOrderOpen(false);
 
     useEffect(() => {
-        fetch(`https://pure-wildwood-91455.herokuapp.com/${carId}`)
+        fetch(`https://pure-wildwood-91455.herokuapp.com/cars/${carId}`)
             .then(res => res.json())
             .then(data => setCarDetails(data))
     }, [carId]);
