@@ -3,10 +3,10 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Link } from 'react-router-dom';
-import { Paper } from '@mui/material';
+import { Paper, Rating } from '@mui/material';
 
 const Car = (props) => {
-    const { _id, img, title, brand, price, rating } = props.car;
+    const { _id, img, title, brand, price, rating, horsepower } = props.car;
     return (
         <>
             <Paper elevation={3} sx={{ m: 3 }}>
@@ -26,9 +26,10 @@ const Car = (props) => {
                     Price: ${price}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                    Ratings: {rating}
-                </Typography>
-                <Link to={`/carDetails/${_id}`}><Button>See Details</Button></Link>
+                    Horsepower: {horsepower}
+                </Typography> <br />
+                <Rating name="half-rating" defaultValue={rating} precision={0.5} size="small" readOnly /><br />
+                <Link to={`/carDetails/${_id}`} style={{ textDecoration: 'none' }}><Button style={{ textDecoration: 'none', backgroundColor: 'orange', padding: '8px', borderRadius: '5px' }} sx={{ m: 3, color: 'black' }}>See Details</Button></Link>
             </Paper>
         </>
     );

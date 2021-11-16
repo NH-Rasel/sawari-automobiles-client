@@ -27,7 +27,7 @@ const Cars = () => {
                         ></Car>)
                     }
                 </Grid>
-                <Link style={{ textDecoration: 'None', backgroundColor: '#306EFF', color: 'white', padding: '10px', borderRadius: '5px' }} to="/explore"><Button sx={{ m: 3 }} variant="container">Explore more collection </Button></Link>
+                <Link style={{ textDecoration: 'None' }} to="/explore"><Button style={{ textDecoration: 'None', backgroundColor: 'black', padding: '10px', borderRadius: '5px' }} sx={{ m: 3, color: 'aqua' }}>Explore more collection </Button></Link>
             </Container>
         </Box>
     );

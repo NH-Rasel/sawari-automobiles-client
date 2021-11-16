@@ -72,7 +72,7 @@ const Review = () => {
                         name="rating"
                         onBlur={handleOnBlur}
                         type="number"
-                        placeholder="Rate in number"
+                        placeholder="Rate in number(1-5)"
                     />
                     <br />
                     <Button type="submit" variant='contained'>Send</Button>

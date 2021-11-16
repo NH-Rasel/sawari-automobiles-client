@@ -38,7 +38,7 @@ const MyOrders = () => {
     }
     return (
         <Container>
-            <Typography variant='h3' sx={{ margin: '10px' }}>
+            <Typography variant='h4' sx={{ m: 3, color: 'orange', fontWeight: '700' }}>
                 My Order History
             </Typography>
             <TableContainer component={Paper}>

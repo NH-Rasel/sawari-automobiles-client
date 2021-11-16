@@ -10,7 +10,7 @@ const Footer = () => {
                 divider={<Divider orientation="vertical" flexItem />}
                 spacing={{ xs: 1, sm: 2, md: 8 }}
             ><Container>
-                    <Typography variant="h6" gutterBottom component="div" color="primary">
+                    <Typography variant="h6" gutterBottom component="div" sx={{ color: 'orange' }}>
                         Subscribe Our Newsletter
                     </Typography>
                     <Box display="flex" justifyContent="center"
@@ -21,9 +21,9 @@ const Footer = () => {
                             color="primary"
                             size="small"
                         />
-                        <Button variant="contained" color="info" size="large">Subscribe</Button>
+                        <Button style={{ textDecoration: 'None', backgroundColor: 'black', padding: '12px', borderRadius: '5px' }} sx={{ color: 'aqua' }} size="large">Subscribe</Button>
                     </Box>
-                    <Typography variant="h6" gutterBottom component="div" color="primary">
+                    <Typography variant="h6" gutterBottom component="div" sx={{ color: 'orange' }}>
                         Follow US
                     </Typography>
                     <Box>
@@ -33,22 +33,22 @@ const Footer = () => {
                     </Box>
                 </Container>
                 <Container>
-                    <Typography variant="h6" gutterBottom component="div" color="primary">
+                    <Typography variant="h6" gutterBottom component="div" sx={{ color: 'orange' }}>
                         Contact US
                     </Typography>
-                    <Typography variant="body2" gutterBottom color="primary">
+                    <Typography variant="body2" gutterBottom sx={{ color: 'black' }}>
                         info@sawari_automobiles
                     </Typography>
                     <Box display="flex" justifyContent="center"
                         alignItems="center">
-                        <i style={{ fontSize: '20px', color: 'black', marginRight: '8px' }} className="fas fa-location-arrow"></i>
-                        <Typography variant="body2" gutterBottom color="primary">
+                        <i style={{ fontSize: '20px', color: 'orange', marginRight: '8px' }} className="fas fa-location-arrow"></i>
+                        <Typography variant="body2" gutterBottom sx={{ color: 'black' }}>
                             2752, Willison Street, <br /> Eagan, United State
                         </Typography>
                     </Box>
                 </Container>
                 <Container>
-                    <Typography variant="h6" gutterBottom color="primary">
+                    <Typography variant="h6" gutterBottom sx={{ color: 'orange' }}>
                         We Accepts
                     </Typography>
                     <Box>

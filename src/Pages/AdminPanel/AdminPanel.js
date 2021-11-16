@@ -35,19 +35,19 @@ function AdminPanel(props) {
 
     const drawer = (
         <div>
-            <Toolbar><Link style={{ textDecoration: 'none' }} to="/home"><Button color="inherit"><i className="fas fa-home"></i> Go Home</Button></Link></Toolbar>
+            <Toolbar><Link style={{ textDecoration: 'none' }} to="/home"><Button sx={{ color: 'orange', fontWeight: '700' }}><i className="fas fa-home"></i> Go Home</Button></Link></Toolbar>
             <Divider />
             <ListItem>
-                <Link style={{ textDecoration: 'none' }} to={`${url}/makeAdmin`}><Button color="inherit">Make Admin</Button></Link>
+                <Link style={{ textDecoration: 'none' }} to={`${url}/makeAdmin`}><Button sx={{ color: 'orange', fontWeight: '700' }} >Make Admin</Button></Link>
             </ListItem>
             {admin && <Box>
                 <List>
-                    <ListItem><Link style={{ textDecoration: 'none' }} to={`${url}/manageOrders`}><Button color="inherit">Manage Orders</Button></Link></ListItem>
+                    <ListItem><Link style={{ textDecoration: 'none' }} to={`${url}/manageOrders`}><Button sx={{ color: 'orange', fontWeight: '700' }}>Manage Orders</Button></Link></ListItem>
                     <ListItem>
-                        <Link style={{ textDecoration: 'none' }} to={`${url}/addCar`}><Button color="inherit">Add Car</Button></Link>
+                        <Link style={{ textDecoration: 'none' }} to={`${url}/addCar`}><Button sx={{ color: 'orange', fontWeight: '700' }}>Add Car</Button></Link>
                     </ListItem>
                     <ListItem>
-                        <Link style={{ textDecoration: 'none' }} to={`${url}/manageCars`}><Button color="inherit">Manage Cars</Button></Link>
+                        <Link style={{ textDecoration: 'none' }} to={`${url}/manageCars`}><Button sx={{ color: 'orange', fontWeight: '700' }}>Manage Cars</Button></Link>
                     </ListItem>
 
                 </List>
@@ -55,7 +55,7 @@ function AdminPanel(props) {
             <Divider />
             <br />
             <ListItem>
-                <Button onClick={logOut} color="inherit"><i className="fas fa-sign-out-alt"></i>Logout</Button>
+                <Button onClick={logOut} sx={{ color: 'orange', fontWeight: '700' }}><i className="fas fa-sign-out-alt"></i>Logout</Button>
             </ListItem>
         </div>
     );
@@ -69,6 +69,7 @@ function AdminPanel(props) {
                 sx={{
                     width: { sm: `calc(100% - ${drawerWidth}px)` },
                     ml: { sm: `${drawerWidth}px` },
+                    backgroundColor: 'black'
                 }}
             >
                 <Toolbar>
@@ -81,7 +82,7 @@ function AdminPanel(props) {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Typography variant="h6" noWrap component="div">
+                    <Typography variant="h6" noWrap sx={{ color: 'aqua' }} component="div">
                         Admin Panel
                     </Typography>
                 </Toolbar>

@@ -25,7 +25,7 @@ const Article = (props) => {
                     <Typography variant="body2" color="text.secondary">
                         {description.slice(0, 200)}
                     </Typography>
-                    <Link to={`/articleDetails/${_id}`}><Button>Read More</Button></Link>
+                    <Link style={{ textDecoration: 'None' }} to={`/articleDetails/${_id}`}><Button style={{ textDecoration: 'none', backgroundColor: 'orange', padding: '8px', borderRadius: '5px' }} sx={{ m: 3, color: 'black' }}>Read More</Button></Link>
                 </Box>
             </Paper>
         </>

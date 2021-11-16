@@ -34,17 +34,17 @@ function Dashboard(props) {
 
     const drawer = (
         <div>
-            <Toolbar><Link style={{ textDecoration: 'none' }} to="/home"><Button color="inherit"><i className="fas fa-home"></i> Go Home</Button></Link></Toolbar>
+            <Toolbar><Link style={{ textDecoration: 'none' }} to="/home"><Button sx={{ color: 'orange', fontWeight: '700' }}><i className="fas fa-home"></i> Go Home</Button></Link></Toolbar>
             <Divider />
             <List>
-                <ListItem><Link style={{ textDecoration: 'none' }} to={`${url}/myOrders`}><Button color="inherit">My Orders</Button></Link></ListItem>
-                <ListItem><Link style={{ textDecoration: 'none' }} to={`${url}/payment`}><Button color="inherit">Payment</Button></Link></ListItem>
-                <ListItem><Link style={{ textDecoration: 'none' }} to={`${url}/review`}><Button color="inherit">Review</Button></Link></ListItem>
+                <ListItem><Link style={{ textDecoration: 'none' }} to={`${url}/myOrders`}><Button sx={{ color: 'orange', fontWeight: '700' }}>My Orders</Button></Link></ListItem>
+                <ListItem><Link style={{ textDecoration: 'none' }} to={`${url}/payment`}><Button sx={{ color: 'orange', fontWeight: '700' }}>Payment</Button></Link></ListItem>
+                <ListItem><Link style={{ textDecoration: 'none' }} to={`${url}/review`}><Button sx={{ color: 'orange', fontWeight: '700' }}>Review</Button></Link></ListItem>
             </List>
             <Divider />
             <br />
             <ListItem>
-                <Button onClick={logOut} color="inherit"><i className="fas fa-sign-out-alt"></i>Logout</Button>
+                <Button onClick={logOut} sx={{ color: 'orange', fontWeight: '700' }}><i className="fas fa-sign-out-alt"></i>Logout</Button>
             </ListItem>
         </div>
     );
@@ -58,6 +58,7 @@ function Dashboard(props) {
                 sx={{
                     width: { sm: `calc(100% - ${drawerWidth}px)` },
                     ml: { sm: `${drawerWidth}px` },
+                    backgroundColor: 'black'
                 }}
             >
                 <Toolbar>
@@ -70,7 +71,7 @@ function Dashboard(props) {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Typography variant="h6" noWrap component="div">
+                    <Typography variant="h6" noWrap component="div" sx={{ color: 'aqua' }}>
                         Dashboard
                     </Typography>
                 </Toolbar>

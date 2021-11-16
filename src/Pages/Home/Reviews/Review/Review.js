@@ -1,4 +1,4 @@
-import { CardMedia, Paper, Typography } from '@mui/material';
+import { CardMedia, Paper, Rating, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
 
@@ -19,9 +19,7 @@ const Review = ({ review }) => {
                 <Typography variant="body2" gutterBottom color="text.secondary">
                     "{description}"
                 </Typography>
-                <Typography variant="body1">
-                    Ratings: {rating}
-                </Typography>
+                <Rating name="half-rating" defaultValue={rating} precision={0.5} readOnly />
             </Box>
         </Paper>
     );

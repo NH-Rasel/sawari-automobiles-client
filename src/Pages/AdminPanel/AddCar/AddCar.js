@@ -35,7 +35,7 @@ const AddCar = () => {
     return (
         <Container>
             <Box>
-                <Typography id="transition-modal-title" variant="h4" sx={{ textAlign: 'center' }} component="h2">
+                <Typography id="transition-modal-title" variant="h4" sx={{ m: 3, color: 'orange', fontWeight: '700' }} component="h2">
                     Add a new Car
                 </Typography>
                 <form onSubmit={handleAddCar}>
@@ -67,11 +67,33 @@ const AddCar = () => {
                         sx={{ width: '90%', m: 1 }}
                         id="outlined-multiline-static"
                         type="text"
-                        name="description"
+                        name="engine_type"
                         onBlur={handleOnBlur}
-                        multiline
-                        rows={4}
-                        placeholder="Description"
+                        placeholder="Engine-Type"
+                    />
+                    <TextField
+                        sx={{ width: '90%', m: 1 }}
+                        id="outlined-multiline-static"
+                        type="number"
+                        name="seat"
+                        onBlur={handleOnBlur}
+                        placeholder="Seat"
+                    />
+                    <TextField
+                        sx={{ width: '90%', m: 1 }}
+                        id="outlined-multiline-static"
+                        type="text"
+                        name="range"
+                        onBlur={handleOnBlur}
+                        placeholder="Range"
+                    />
+                    <TextField
+                        sx={{ width: '90%', m: 1 }}
+                        id="outlined-multiline-static"
+                        type="text"
+                        name="horsepower"
+                        onBlur={handleOnBlur}
+                        placeholder="Horsepower"
                     />
                     <TextField
                         sx={{ width: '90%', m: 1 }}
@@ -87,9 +109,9 @@ const AddCar = () => {
                         name="rating"
                         onBlur={handleOnBlur}
                         type="number"
-                        placeholder="Rate in number"
+                        placeholder="Rate in number(1-5)"
                     />
-                    <Button type="submit" variant='contained' color="success">Add Car</Button>
+                    <Button type="submit" style={{ backgroundColor: 'black', padding: '12px', borderRadius: '5px' }} sx={{ color: 'aqua' }}>Add Car</Button>
                 </form>
             </Box>
         </Container>

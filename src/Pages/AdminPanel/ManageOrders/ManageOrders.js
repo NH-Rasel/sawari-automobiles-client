@@ -8,15 +8,17 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
+import useAuth from '../../../hooks/useAuth';
 
 const ManageOrders = () => {
+    const { user } = useAuth();
     const [order, setOrder] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/orders`)
+        fetch(`http://localhost:5000/orders?email=${user.email}`)
             .then(res => res.json())
             .then(data => setOrder(data))
-    }, []);
+    }, [user.email]);
 
     //Delete a order
     const handleDeleteOrder = id => {
@@ -37,7 +39,7 @@ const ManageOrders = () => {
     }
     return (
         <Container>
-            <Typography variant='h3' sx={{ margin: '10px' }}>
+            <Typography variant="h4" sx={{ m: 3, color: 'orange', fontWeight: '700' }}>
                 Manage All Orders
             </Typography>
             <TableContainer component={Paper}>

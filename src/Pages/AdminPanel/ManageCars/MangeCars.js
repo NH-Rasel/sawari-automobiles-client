@@ -33,7 +33,7 @@ const MangeCars = () => {
         <>
             <Box sx={{ flexGrow: 1 }}>
                 <Container>
-                    <Typography sx={{ fontWeight: 500, m: 4 }} variant="h4" component="div">
+                    <Typography variant="h4" sx={{ m: 3, color: 'orange', fontWeight: '700' }} component="div">
                         Explore Cars
                     </Typography>
                     <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }} item xs={12} sm={6} md={4}>
@@ -56,7 +56,7 @@ const MangeCars = () => {
                                     Price: ${car.price}
                                 </Typography>
                                 <Typography variant="body2" color="text.secondary">
-                                    Ratings: {car.rating}
+                                    Horsepower: {car.horsepower}
                                 </Typography>
                                 <Button onClick={() => handleDeleteCar(car._id)} style={{
                                     border: 'none',

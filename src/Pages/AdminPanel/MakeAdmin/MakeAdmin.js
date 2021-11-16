@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, TextField, Alert } from '@mui/material';
+import { Button, TextField, Alert, Typography } from '@mui/material';
 
 const MakeAdmin = () => {
     const [email, setEmail] = useState('');
@@ -28,7 +28,7 @@ const MakeAdmin = () => {
     }
     return (
         <div>
-            <h2>Make an admin</h2>
+            <Typography variant="h4" sx={{ m: 3, color: 'orange', fontWeight: '700' }}>Make an admin</Typography>
             <form onClick={handleAdminSubmit}>
                 <TextField
                     sx={{ width: '50%' }}
@@ -36,7 +36,7 @@ const MakeAdmin = () => {
                     type="email"
                     onBlur={handleOnBlur}
                     variant="standard" />
-                <Button type="submit" variant="contained">Make Admin</Button>
+                <Button style={{ backgroundColor: 'black', padding: '12px', borderRadius: '5px' }} sx={{ color: 'aqua' }} type="submit">Make Admin</Button>
             </form>
             {success && <Alert severity="success">Made admin successfully</Alert>}
         </div>

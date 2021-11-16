@@ -37,14 +37,13 @@ const Navigation = () => {
     return (
         <>
             <Box sx={{ flexGrow: 1 }}>
-                <AppBar className={navItem} position="static">
+                <AppBar style={{ backgroundColor: 'black' }} className={navItem} position="static">
                     <Toolbar>
                         <IconButton
                             size="large"
                             edge="start"
-                            color="inherit"
                             aria-label="menu"
-                            sx={{ mr: 2 }}
+                            sx={{ mr: 2, color: 'orange' }}
                             className={navIcon}
                             onClick={() => setState(true)}
                         >
@@ -52,20 +51,20 @@ const Navigation = () => {
                         </IconButton>
                         <Link style={{ textDecoration: 'none', color: 'white' }} to="/home"><img src="https://i.ibb.co/SmmzC8m/logo.png" alt="" /></Link>
                         <Box sx={{ display: 'flex', alignItems: 'center' }} className={navItemContainer}>
-                            <Link style={{ textDecoration: 'none', color: 'white' }} to="/home"><Button style={{ fontWeight: 700 }} color="inherit">Home</Button></Link>
-                            <Link style={{ textDecoration: 'none', color: 'white' }} to="/explore"><Button style={{ fontWeight: 700 }} color="inherit">Explore</Button></Link>
+                            <Link style={{ textDecoration: 'none', color: 'aqua' }} to="/home"><Button style={{ fontWeight: 700 }} color="inherit">Home</Button></Link>
+                            <Link style={{ textDecoration: 'none', color: 'aqua' }} to="/explore"><Button style={{ fontWeight: 700 }} color="inherit">Explore</Button></Link>
                             {
                                 user?.email ?
                                     <Box>
-                                        <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/dashboard"><Button color="inherit">Dashboard</Button></NavLink>
+                                        <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/dashboard"><Button style={{ fontWeight: 700, color: 'aqua' }} >Dashboard</Button></NavLink>
                                         {
                                             admin &&
-                                            <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/adminPanel"><Button color="inherit">Admin Panel</Button></NavLink>
+                                            <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/adminPanel"><Button style={{ fontWeight: 700, color: 'aqua' }} >Admin Panel</Button></NavLink>
                                         }
-                                        <Button onClick={logOut} style={{ fontWeight: 700 }} color="inherit"><i className="fas fa-sign-out-alt"></i>Logout</Button>
+                                        <Button onClick={logOut} style={{ fontWeight: 700, color: 'aqua' }} color="inherit"><i className="fas fa-sign-out-alt"></i>Logout</Button>
                                     </Box>
                                     :
-                                    <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/login"><Button style={{ fontWeight: 700 }} color="inherit">Login</Button></NavLink>
+                                    <NavLink style={{ textDecoration: 'none', color: 'aqua' }} to="/login"><Button style={{ fontWeight: 700 }} color="inherit">Login</Button></NavLink>
                             }
 
                         </Box>
@@ -101,7 +100,7 @@ const Navigation = () => {
                                                     }
                                                 </ListItemText>
                                                 <ListItemText button style={{ textDecoration: 'none' }}>
-                                                    <Button onClick={logOut} color="inherit"><i className="fas fa-sign-out-alt"></i></Button>
+                                                    <Button onClick={logOut} color="inherit"><i className="fas fa-sign-out-alt">Logout</i></Button>
                                                 </ListItemText>
                                             </List>
                                             :
