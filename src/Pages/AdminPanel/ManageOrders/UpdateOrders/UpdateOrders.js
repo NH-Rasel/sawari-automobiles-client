@@ -5,13 +5,13 @@ import Navigation from '../../../../Shared/Navigation/Navigation';
 
 const UpdateOrders = () => {
     const { id } = useParams();
-    const [order, setOrder] = useState([]);
+    const [order, setOrder] = useState({});
 
     useEffect(() => {
-        fetch(`http://localhost:5000/orders`)
+        fetch(`http://localhost:5000/orders/${id}`)
             .then(res => res.json())
             .then(data => setOrder(data))
-    }, []);
+    }, [id]);
 
     const handleStatusChange = e => {
         const updateStatus = e.target.value;
@@ -43,7 +43,7 @@ const UpdateOrders = () => {
         <>
             <Navigation />
             <Container>
-                <Typography id="transition-modal-title" variant="h6" sx={{ textAlign: 'center' }} component="h2">
+                <Typography id="transition-modal-title" variant="h6" sx={{ textAlign: 'center', m: 4 }} component="h2">
                     Update Order Status
                 </Typography>
                 <form onSubmit={handleUpdateOrder}>
@@ -75,7 +75,7 @@ const UpdateOrders = () => {
                         value={order.status || ''}
                     />
                     <br />
-                    <Button type="submit" variant='contained'>Update</Button>
+                    <Button type="submit" variant='contained' color="warning">Update</Button>
                 </form>
             </Container>
         </>

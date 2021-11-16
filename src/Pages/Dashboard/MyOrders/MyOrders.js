@@ -1,16 +1,23 @@
 import React, { useEffect, useState } from 'react';
-import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
-import { Container, Typography } from '@mui/material';
+import { Button, Container, Typography } from '@mui/material';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import useAuth from '../../../hooks/useAuth';
 
 const MyOrders = () => {
+    const { user } = useAuth();
     const [order, setOrder] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/orders`)
+        fetch(`http://localhost:5000/orders?email=${user.email}`)
             .then(res => res.json())
             .then(data => setOrder(data))
-    }, [])
+    }, [user.email])
 
     //Delete a order
     const handleDeleteOrder = id => {
@@ -34,27 +41,39 @@ const MyOrders = () => {
             <Typography variant='h3' sx={{ margin: '10px' }}>
                 My Order History
             </Typography>
-            <Box
-                sx={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center'
-                }}
-            >
-                <Paper elevation={3} style={{ padding: '20px' }}>
-                    {
-                        order?.map(orders => <Box
-                            key={orders._id}
-                        >
-                            <h4>Buyer: {orders.buyerName}</h4>
-                            <h5>Car Model: <span className="fw-bold">{orders.carName}</span></h5>
-                            <p>Price: ${orders.price}</p>
-                            <p>Status: {orders.status}</p>
-                            <button onClick={() => handleDeleteOrder(orders._id)} className="btn btn-danger"><i className="far fa-trash-alt"></i></button>
-                        </Box>)
-                    }
-                </Paper>
-            </Box>
+            <TableContainer component={Paper}>
+                <Table aria-label="order table">
+                    <TableHead>
+                        <TableRow>
+                            <TableCell>Buyer</TableCell>
+                            <TableCell align="right">Car Model</TableCell>
+                            <TableCell align="right">Price</TableCell>
+                            <TableCell align="right">Status</TableCell>
+                            <TableCell align="right">Options</TableCell>
+                        </TableRow>
+                    </TableHead>
+                    <TableBody>
+                        {order.map((orders) => (
+                            <TableRow
+                                key={orders._id}
+                                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                            >
+                                <TableCell component="th" scope="row">
+                                    {orders.buyerName}
+                                </TableCell>
+                                <TableCell align="right">{orders.carName}</TableCell>
+                                <TableCell align="right">${orders.price}</TableCell>
+                                <TableCell align="right">{orders.status}</TableCell>
+                                <TableCell align="right">
+                                    <Button onClick={() => handleDeleteOrder(orders._id)} style={{
+                                        border: 'none',
+                                        borderRadius: '3px', margin: '2px', backgroundColor: 'red', padding: '8px', color: 'white'
+                                    }}><i className="far fa-trash-alt"></i></Button></TableCell>
+                            </TableRow>
+                        ))}
+                    </TableBody>
+                </Table>
+            </TableContainer>
         </Container>
     );
 };

@@ -62,7 +62,7 @@ const Navigation = () => {
                                             admin &&
                                             <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/adminPanel"><Button color="inherit">Admin Panel</Button></NavLink>
                                         }
-                                        <Button onClick={logOut} style={{ fontWeight: 700 }} color="inherit">Logout</Button>
+                                        <Button onClick={logOut} style={{ fontWeight: 700 }} color="inherit"><i className="fas fa-sign-out-alt"></i>Logout</Button>
                                     </Box>
                                     :
                                     <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/login"><Button style={{ fontWeight: 700 }} color="inherit">Login</Button></NavLink>
@@ -101,7 +101,7 @@ const Navigation = () => {
                                                     }
                                                 </ListItemText>
                                                 <ListItemText button style={{ textDecoration: 'none' }}>
-                                                    <Button onClick={logOut} color="inherit">Logout</Button>
+                                                    <Button onClick={logOut} color="inherit"><i className="fas fa-sign-out-alt"></i></Button>
                                                 </ListItemText>
                                             </List>
                                             :

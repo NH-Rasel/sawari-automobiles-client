@@ -10,7 +10,7 @@ const AddCar = () => {
     const priceRef = useRef();
     const ratingRef = useRef();
 
-    const handleCarSubmit = e => {
+    const handleAddCar = e => {
         e.preventDefault();
         const title = titleRef.current.value;
         const brand = brandRef.current.value;
@@ -19,13 +19,13 @@ const AddCar = () => {
         const price = priceRef.current.value;
         const rating = ratingRef.current.value;
 
-        const addCar = { title, brand, img, description, rating, price };
+        const newCar = { title, brand, img, description, rating, price };
         fetch('http://localhost:5000/cars', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(addCar)
+            body: JSON.stringify(newCar)
         })
             .then(res => res.json())
             .then(data => {
@@ -39,10 +39,10 @@ const AddCar = () => {
     return (
         <Container>
             <Box>
-                <Typography id="transition-modal-title" variant="h6" sx={{ textAlign: 'center' }} component="h2">
+                <Typography id="transition-modal-title" variant="h4" sx={{ textAlign: 'center' }} component="h2">
                     Add a new Car
                 </Typography>
-                <form onSubmit={handleCarSubmit}>
+                <form onSubmit={handleAddCar}>
                     <TextField
                         sx={{ width: '90%', m: 1 }}
                         id="outlined-size-small"
@@ -62,7 +62,7 @@ const AddCar = () => {
                         id="outlined-size-small"
                         type="link"
                         ref={imgRef}
-                        placeholder="Your Image URL"
+                        placeholder="Car Image URL"
                     />
                     <TextField
                         sx={{ width: '90%', m: 1 }}
@@ -87,7 +87,7 @@ const AddCar = () => {
                         type="number"
                         placeholder="Rate in number"
                     />
-                    <Button type="submit" variant='contained'>Add Car</Button>
+                    <Button type="submit" variant='contained' color="success">Add Car</Button>
                 </form>
             </Box>
         </Container>

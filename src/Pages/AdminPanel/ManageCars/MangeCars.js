@@ -58,7 +58,10 @@ const MangeCars = () => {
                                 <Typography variant="body2" color="text.secondary">
                                     Ratings: {car.rating}
                                 </Typography>
-                                <Button onClick={() => handleDeleteCar(car._id)} className="btn btn-danger"><i className="far fa-trash-alt"></i></Button>
+                                <Button onClick={() => handleDeleteCar(car._id)} style={{
+                                    border: 'none',
+                                    borderRadius: '3px', margin: '8px', backgroundColor: 'red', padding: '10px', color: 'white'
+                                }}><i className="far fa-trash-alt"></i></Button>
                             </Paper>)
                         }
                     </Grid>

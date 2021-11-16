@@ -82,7 +82,7 @@ function AdminPanel(props) {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" noWrap component="div">
-                        AdminPanel
+                        Admin Panel
                     </Typography>
                 </Toolbar>
             </AppBar>
