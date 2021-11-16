@@ -1,6 +1,7 @@
-import { Container, Grid, Typography } from '@mui/material';
+import { Button, Container, Grid, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Car from './Car/Car';
 
 
@@ -26,6 +27,7 @@ const Cars = () => {
                         ></Car>)
                     }
                 </Grid>
+                <Link style={{ textDecoration: 'None', backgroundColor: '#306EFF', color: 'white', padding: '10px', borderRadius: '5px' }} to="/explore"><Button sx={{ m: 3 }} variant="container">Explore more collection </Button></Link>
             </Container>
         </Box>
     );

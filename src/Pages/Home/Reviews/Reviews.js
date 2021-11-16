@@ -12,7 +12,7 @@ const Reviews = () => {
     }, [])
     return (
         <Container>
-            <Typography sx={{ m: 3 }} variant="h4" gutterBottom component="div">
+            <Typography sx={{ m: 5 }} variant="h4" gutterBottom component="div">
                 Our Clients Feedback
             </Typography>
             <HorizontalGallery

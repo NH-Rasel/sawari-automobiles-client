@@ -1,34 +1,22 @@
 import { Button, Container, TextField, Typography } from '@mui/material';
 import { Box } from '@mui/system';
-import React, { useRef } from 'react';
+import React, { useState } from 'react';
 
-
-const style = {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: 400,
-    bgcolor: 'white',
-    borderRadius: '10px',
-    boxShadow: 24,
-    p: 4,
-};
 
 const Review = () => {
-    const nameRef = useRef();
-    const imgRef = useRef();
-    const descriptionRef = useRef();
-    const ratingRef = useRef();
+    const [addReview, setAddReview] = useState({});
+
+    const handleOnBlur = e => {
+        const field = e.target.name;
+        const value = e.target.value;
+        const newInfo = { ...addReview };
+        newInfo[field] = value;
+        setAddReview(newInfo);
+    }
 
     const handleReviewSubmit = e => {
-        e.preventDefault();
-        const name = nameRef.current.value;
-        const img = imgRef.current.value;
-        const description = descriptionRef.current.value;
-        const rating = ratingRef.current.value;
 
-        const sendReview = { name, img, description, rating };
+        const sendReview = { ...addReview };
         fetch('http://localhost:5000/reviews', {
             method: 'POST',
             headers: {
@@ -43,14 +31,12 @@ const Review = () => {
                     e.target.reset();
                 }
             })
-
+        e.preventDefault();
     }
-
-
 
     return (
         <Container>
-            <Box sx={style}>
+            <Box>
                 <Typography id="transition-modal-title" variant="h6" sx={{ textAlign: 'center' }} component="h2">
                     Send Review
                 </Typography>
@@ -59,21 +45,23 @@ const Review = () => {
                         sx={{ width: '90%', m: 1 }}
                         id="outlined-size-small"
                         type="text"
-                        ref={nameRef}
+                        name="name"
+                        onBlur={handleOnBlur}
                         placeholder="Your Name"
                     />
                     <TextField
                         sx={{ width: '90%', m: 1 }}
                         id="outlined-size-small"
                         type="link"
-                        ref={imgRef}
+                        name="img"
+                        onBlur={handleOnBlur}
                         placeholder="Your Image URL"
                     />
                     <TextField
                         sx={{ width: '90%', m: 1 }}
                         id="outlined-multiline-static"
-                        type="text"
-                        ref={descriptionRef}
+                        name="description"
+                        onBlur={handleOnBlur}
                         multiline
                         rows={4}
                         placeholder="Description"
@@ -81,10 +69,12 @@ const Review = () => {
                     <TextField
                         sx={{ width: '90%', m: 1 }}
                         id="outlined-size-small"
-                        ref={ratingRef}
+                        name="rating"
+                        onBlur={handleOnBlur}
                         type="number"
                         placeholder="Rate in number"
                     />
+                    <br />
                     <Button type="submit" variant='contained'>Send</Button>
                 </form>
             </Box>
