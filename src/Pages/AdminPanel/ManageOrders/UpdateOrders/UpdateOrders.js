@@ -8,7 +8,7 @@ const UpdateOrders = () => {
     const [order, setOrder] = useState({});
 
     useEffect(() => {
-        fetch(`http://localhost:5000/orders/${id}`)
+        fetch(`https://pure-wildwood-91455.herokuapp.com/orders/${id}`)
             .then(res => res.json())
             .then(data => setOrder(data))
     }, [id]);
@@ -20,7 +20,7 @@ const UpdateOrders = () => {
     }
 
     const handleUpdateOrder = e => {
-        const url = `http://localhost:5000/orders/${id}`;
+        const url = `https://pure-wildwood-91455.herokuapp.com/orders/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {

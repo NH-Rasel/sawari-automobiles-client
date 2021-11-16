@@ -7,7 +7,7 @@ import React, { useEffect, useState } from 'react';
 const MangeCars = () => {
     const [cars, setCars] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/cars')
+        fetch('https://pure-wildwood-91455.herokuapp.com/cars')
             .then(res => res.json())
             .then(data => setCars(data))
     }, [])
@@ -16,7 +16,7 @@ const MangeCars = () => {
     const handleDeleteCar = id => {
         const proceed = window.confirm('Confirm Delete?')
         if (proceed) {
-            fetch(`http://localhost:5000/cars/${id}`, {
+            fetch(`https://pure-wildwood-91455.herokuapp.com/cars/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

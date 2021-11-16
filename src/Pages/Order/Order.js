@@ -35,7 +35,7 @@ const Order = ({ openOrder, handleOrderClose, carDetails }) => {
             price,
             carName: title
         }
-        fetch('http://localhost:5000/orders', {
+        fetch('https://pure-wildwood-91455.herokuapp.com/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

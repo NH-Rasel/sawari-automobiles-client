@@ -15,7 +15,7 @@ const ManageOrders = () => {
     const [order, setOrder] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/orders?email=${user.email}`)
+        fetch(`https://pure-wildwood-91455.herokuapp.com/orders?email=${user.email}`)
             .then(res => res.json())
             .then(data => setOrder(data))
     }, [user.email]);
@@ -24,7 +24,7 @@ const ManageOrders = () => {
     const handleDeleteOrder = id => {
         const proceed = window.confirm('Confirm Delete?')
         if (proceed) {
-            fetch(`http://localhost:5000/orders/${id}`, {
+            fetch(`https://pure-wildwood-91455.herokuapp.com/orders/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

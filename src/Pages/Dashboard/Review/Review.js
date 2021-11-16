@@ -17,7 +17,7 @@ const Review = () => {
     const handleReviewSubmit = e => {
 
         const sendReview = { ...addReview };
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://pure-wildwood-91455.herokuapp.com/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

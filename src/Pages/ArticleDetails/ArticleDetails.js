@@ -13,7 +13,7 @@ const ArticleDetails = () => {
     const [articleDetails, setArticleDetails] = useState({});
 
     useEffect(() => {
-        fetch(`http://localhost:5000/articles/${articleId}`)
+        fetch(`https://pure-wildwood-91455.herokuapp.com/articles/${articleId}`)
             .then(res => res.json())
             .then(data => setArticleDetails(data))
     }, [articleId]);

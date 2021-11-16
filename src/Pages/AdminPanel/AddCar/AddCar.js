@@ -15,7 +15,7 @@ const AddCar = () => {
 
     const handleAddCar = e => {
         const newCar = { ...addCar }
-        fetch('http://localhost:5000/cars', {
+        fetch('https://pure-wildwood-91455.herokuapp.com/cars', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
