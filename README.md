@@ -4,11 +4,11 @@ LIVE SITE: (https://sawari-automobiles.web.app/)
 
 ## Client side code link:
 
-(https://github.com/programming-hero-web-course-4/niche-website-client-side-NH-Rasel)
+(https://github.com/NH-Rasel/sawari-automobiles-client)
 
 ## Server side code link:
 
-(https://github.com/programming-hero-web-course-4/niche-website-server-side-NH-Rasel)
+(https://github.com/NH-Rasel/sawari-automobiles-server)
 
 ## About the project
 
