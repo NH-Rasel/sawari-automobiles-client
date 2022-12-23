@@ -1,5 +1,5 @@
+import { Alert, Button, TextField, Typography } from '@mui/material';
 import React, { useState } from 'react';
-import { Button, TextField, Alert, Typography } from '@mui/material';
 
 const MakeAdmin = () => {
     const [email, setEmail] = useState('');
@@ -10,7 +10,7 @@ const MakeAdmin = () => {
     }
     const handleAdminSubmit = e => {
         const user = { email }
-        fetch('https://pure-wildwood-91455.herokuapp.com/users/admin', {
+        fetch('https://sawari-automobiles-server.onrender.com/users/admin', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

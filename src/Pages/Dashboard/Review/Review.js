@@ -17,7 +17,7 @@ const Review = () => {
     const handleReviewSubmit = e => {
 
         const sendReview = { ...addReview };
-        fetch('https://pure-wildwood-91455.herokuapp.com/reviews', {
+        fetch('https://sawari-automobiles-server.onrender.com/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

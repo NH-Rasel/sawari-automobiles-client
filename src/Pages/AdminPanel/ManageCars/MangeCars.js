@@ -1,13 +1,13 @@
 import { Container, Grid, Paper, Typography } from '@mui/material';
-import { Box } from '@mui/system';
-import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
+import CardMedia from '@mui/material/CardMedia';
+import { Box } from '@mui/system';
 import React, { useEffect, useState } from 'react';
 
 const MangeCars = () => {
     const [cars, setCars] = useState([]);
     useEffect(() => {
-        fetch('https://pure-wildwood-91455.herokuapp.com/cars')
+        fetch('https://sawari-automobiles-server.onrender.com/cars')
             .then(res => res.json())
             .then(data => setCars(data))
     }, [])
@@ -16,7 +16,7 @@ const MangeCars = () => {
     const handleDeleteCar = id => {
         const proceed = window.confirm('Confirm Delete?')
         if (proceed) {
-            fetch(`https://pure-wildwood-91455.herokuapp.com/cars/${id}`, {
+            fetch(`https://sawari-automobiles-server.onrender.com/cars/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

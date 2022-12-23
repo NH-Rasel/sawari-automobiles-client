@@ -8,7 +8,7 @@ import Car from './Car/Car';
 const Cars = () => {
     const [cars, setCars] = useState([]);
     useEffect(() => {
-        fetch('https://pure-wildwood-91455.herokuapp.com/cars')
+        fetch('https://sawari-automobiles-server.onrender.com/cars')
             .then(res => res.json())
             .then(data => setCars(data)
             )

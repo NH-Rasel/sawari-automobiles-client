@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router';
+import { Button, Container, Divider, Grid, Rating } from '@mui/material';
 import Box from '@mui/material/Box';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { Button, Container, Divider, Grid, Rating } from '@mui/material';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router';
 import Navigation from '../../Shared/Navigation/Navigation';
 import Order from '../Order/Order';
 
@@ -16,7 +16,7 @@ const CarDetails = () => {
     const handleOrderClose = () => setOrderOpen(false);
 
     useEffect(() => {
-        fetch(`https://pure-wildwood-91455.herokuapp.com/cars/${carId}`)
+        fetch(`https://sawari-automobiles-server.onrender.com/cars/${carId}`)
             .then(res => res.json())
             .then(data => setCarDetails(data))
     }, [carId]);

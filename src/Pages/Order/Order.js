@@ -35,7 +35,7 @@ const Order = ({ openOrder, handleOrderClose, carDetails }) => {
             price,
             carName: title
         }
-        fetch('https://pure-wildwood-91455.herokuapp.com/orders', {
+        fetch('https://sawari-automobiles-server.onrender.com/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

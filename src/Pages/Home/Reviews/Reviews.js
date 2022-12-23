@@ -1,12 +1,12 @@
 import { Container, Typography } from '@mui/material';
 import React, { useEffect, useState } from 'react';
-import HorizontalGallery from 'react-dynamic-carousel'
+import HorizontalGallery from 'react-dynamic-carousel';
 import Review from './Review/Review';
 
 const Reviews = () => {
     const [reviews, setReviews] = useState([]);
     useEffect(() => {
-        fetch('https://pure-wildwood-91455.herokuapp.com/reviews')
+        fetch('https://sawari-automobiles-server.onrender.com/reviews')
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [])

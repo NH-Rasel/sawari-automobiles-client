@@ -6,7 +6,7 @@ import Article from './Article/Article';
 const Articles = () => {
     const [articles, setArticles] = useState([]);
     useEffect(() => {
-        fetch('https://pure-wildwood-91455.herokuapp.com/articles')
+        fetch('https://sawari-automobiles-server.onrender.com/articles')
             .then(res => res.json())
             .then(data => setArticles(data))
     }, [])

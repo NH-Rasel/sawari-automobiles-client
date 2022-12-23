@@ -15,7 +15,7 @@ const AddCar = () => {
 
     const handleAddCar = e => {
         const newCar = { ...addCar }
-        fetch('https://pure-wildwood-91455.herokuapp.com/cars', {
+        fetch('https://sawari-automobiles-server.onrender.com/cars', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
